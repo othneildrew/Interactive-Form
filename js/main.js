@@ -36,7 +36,6 @@ $(function() {
   let checkboxes = $('.activities input[type="checkbox"]');
 
 
-
   /* ===== FUNCTIONS ================ */
 
   /***
@@ -77,7 +76,7 @@ $(function() {
     let labelFor;
 
     $(labels).each(function(index, value) {
-      labelFor = labelFor = $(this).attr('for');
+      labelFor = $(this).attr('for');
       $(' <span class="error '+ labelFor +'" style="display: block; margin-top: -12px; margin-bottom: 25px;"></span>').insertAfter('#' + labelFor);
     });
 
@@ -122,7 +121,6 @@ $(function() {
         }
       }
     }
-    console.log(errors);
   }
 
 
@@ -222,6 +220,7 @@ $(function() {
     // Add/Subtract cost from total based on activity checked
     if(is_checked) {
       total_cost += Number(price);
+      appMessage('hide', 'activities');
     } else {
       total_cost -= Number(price);
     }
@@ -319,8 +318,6 @@ $(function() {
     e.preventDefault();
 
     let activity_isChecked = false;
-
-    //let is_checked = $(this).is(':checked');
 
     // Require at least one activity be checked
     checkboxes.each(function(index, value) {
