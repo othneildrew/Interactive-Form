@@ -93,4 +93,4 @@ Project Link: [https://github.com/othneildrew/Interactive-Form](https://github.c
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[product-screenshot]: https://www.othneildrew.com/images/projects/.jpg
+[product-screenshot]: https://www.othneildrew.com/images/projects/interactive-form.jpg

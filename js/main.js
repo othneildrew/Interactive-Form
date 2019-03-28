@@ -101,6 +101,8 @@ $(function() {
 
     $('.error.' + label).text(message);
 
+    $('#' + label).css('border', '2px solid #a93226');
+
     if(type === 'show') {
       // Add error to errors array (no duplicates)
       let item = {
@@ -113,6 +115,9 @@ $(function() {
       }
     } else if(type === 'hide') {
       $('.error.submission').hide();
+
+      $('#' + label).css('border', 'none');
+
       // Remove error from errors array if exists
       $.each(errors, function(position, value) {
         if(exists[0] === errors[position]) {
