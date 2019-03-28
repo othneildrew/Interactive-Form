@@ -34,7 +34,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Interactive-Form Screen][product-screenshot]](https://www.othneildrew.com/Interactive-Form)
+[![Interactive-Form Screenshot][product-screenshot]](https://www.othneildrew.com/Interactive-Form)
 
 This project is part of the Team Treehouse [Full Stack JavaScript Techdegree](https://join.teamtreehouse.com/techdegree) program.
 

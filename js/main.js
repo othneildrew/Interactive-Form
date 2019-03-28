@@ -100,7 +100,6 @@ $(function() {
     });
 
     $('.error.' + label).text(message);
-    $('.error.submission').hide();
 
     if(type === 'show') {
       // Add error to errors array (no duplicates)
@@ -113,6 +112,7 @@ $(function() {
         errors.push(item);
       }
     } else if(type === 'hide') {
+      $('.error.submission').hide();
       // Remove error from errors array if exists
       for(let i = 0; i < errors.length; i++) {
         if(exists[0] === errors[i]) {
