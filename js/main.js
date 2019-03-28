@@ -114,12 +114,12 @@ $(function() {
     } else if(type === 'hide') {
       $('.error.submission').hide();
       // Remove error from errors array if exists
-      for(let i = 0; i < errors.length; i++) {
-        if(exists[0] === errors[i]) {
-          index = errors.indexOf(errors[i]);
+      $.each(errors, function(position, value) {
+        if(exists[0] === errors[position]) {
+          index = errors.indexOf(errors[position]);
           errors.splice(index, 1);
         }
-      }
+      });
     }
   }
 
@@ -146,6 +146,30 @@ $(function() {
 
   function isValidCVV(cvv) {
     return /^[\d]{3}$/.test(cvv);
+  }
+
+  function checkCCNo() {
+    if(!isValidCardNo($('#cc-num').val())) {
+      appMessage('show', 'cc-num', 'Card number must be 13 to 16-digit');
+    } else {
+      appMessage('hide', 'cc-num');
+    }
+  }
+
+  function checkZip() {
+    if(!isValidZip($('#zip').val())) {
+      appMessage('show', 'zip', 'Zip must be 5-digit');
+    } else {
+      appMessage('hide', 'zip');
+    }
+  }
+
+  function checkCVV() {
+    if(!isValidCVV($('#cvv').val())) {
+      appMessage('show', 'cvv', 'CVV must be 3-digit');
+    } else {
+      appMessage('hide', 'cvv');
+    }
   }
 
 
@@ -288,27 +312,15 @@ $(function() {
   });
 
   $('#cc-num').keyup(function() {
-    if(!isValidCardNo($(this).val())) {
-      appMessage('show', 'cc-num', 'Card number must be 13 to 16-digit');
-    } else {
-      appMessage('hide', 'cc-num');
-    }
+    checkCCNo();
   });
 
   $('#zip').keyup(function() {
-    if(!isValidZip($(this).val())) {
-      appMessage('show', 'zip', 'Zip must be 5-digit');
-    } else {
-      appMessage('hide', 'zip');
-    }
+    checkZip();
   });
 
   $('#cvv').keyup(function() {
-    if(!isValidCVV($(this).val())) {
-      appMessage('show', 'cvv', 'CVV must be 3-digit');
-    } else {
-      appMessage('hide', 'cvv');
-    }
+    checkCVV();
   });
 
 
@@ -335,9 +347,9 @@ $(function() {
       appMessage('hide', 'zip');
       appMessage('hide', 'cvv');
     } else {
-      appMessage('show', 'cc-num', 'Card number must be 13 to 16-digit');
-      appMessage('show', 'zip', 'Zip must be 5-digit');
-      appMessage('show', 'cvv', 'CVV must be 3-digit');
+      checkCCNo();
+      checkZip();
+      checkCVV();
     }
 
     if(errors.length > 0) {
