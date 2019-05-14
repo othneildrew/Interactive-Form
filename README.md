@@ -5,7 +5,7 @@
   <h3 align="center">Interactive-Form</h3>
 
   <p align="center">
-    Using JQuery to create an interactive and enhanced user experience with real -time form validation.
+    Using JQuery to create an interactive and enhanced user experience with real-time form validation.
     <br />
     <a href="https://www.othneildrew.com/Interactive-Form"><strong>View Demo</strong></a>
     <br />
